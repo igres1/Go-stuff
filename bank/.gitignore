@@ -1,0 +1,15 @@
+# Go build artifacts
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+
+# Go vendor
+vendor/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
