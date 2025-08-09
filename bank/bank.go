@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
@@ -12,16 +13,29 @@ func writeBalanceToFile(balance float64) {
 	balanceText := fmt.Sprint(balance)
 	os.WriteFile(accountBalanceFile, []byte(balanceText), 0644) // file permissions , the owner of the file can read and write and the others just can read
 }
-func getBalanceFromFile() float64 {
-	data, _ := os.ReadFile(accountBalanceFile)
+func getBalanceFromFile() (float64, error) {
+	data, err := os.ReadFile(accountBalanceFile)
+
+	if err != nil {
+		return 1000, errors.New("Faild to find Balance file")
+	}
+
 	balanceText := string(data)
-	balance, _ := strconv.ParseFloat(balanceText, 64)
-	return balance
+	balance, err := strconv.ParseFloat(balanceText, 64)
+	if err != nil {
+		return 1000, errors.New("Failed to parse stored balance value.")
+	}
+	return balance, nil
 }
 
 func main() {
-	var Balance = getBalanceFromFile()
-
+	var Balance, err = getBalanceFromFile()
+	if err != nil {
+		fmt.Println("ERROR")
+		fmt.Println(err)
+		fmt.Println("--------")
+		panic("Can't continue sorry")
+	}
 	for {
 
 		fmt.Println("Welcome to the Go bank")
