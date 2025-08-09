@@ -10,3 +10,9 @@ This repository is a collection of small project , experiments and random code w
 ## Disclaimer 
 
 This is a learning repo therefore some code may be messy , incomplete , or with short explanation .
+
+
+## License
+This repository is made publicly available for **viewing purposes only**.  
+**Cloning, copying, modifying, or redistributing** the content is strictly prohibited without prior written permission from the author.  
+See the [LICENSE](LICENSE) file for more details.
