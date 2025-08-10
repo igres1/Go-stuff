@@ -7,6 +7,7 @@ This repository is a collection of small project , experiments and random code w
 -Also to try out extra things to improve the stuff done in the course
 
 -The bank app is the file where I will work following the lectures
+
 -The Profit calculator is the file where I apply my knolewdge os the bank app and writing code by my own
 
 
