@@ -14,3 +14,6 @@ func editAgeAdultYears(age *int) {
 	//	return *age - 18
 	*age = *age - 18
 }
+   
+
+me llamo pascual es un 
